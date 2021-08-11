@@ -24,23 +24,24 @@ fun main() {
     println("md5后 md5Str = ${md5Str}")
 
 
-    /*  val gitHubApi = Retrofit.Builder().baseUrl("https://api.github.com")
-          .addConverterFactory(GsonConverterFactory.create())
-          .build()
-          .create(GitHubApi::class.java)
+    val gitHubApi = Retrofit.Builder().baseUrl("https://api.github.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(GitHubApi::class.java)
 
-      val response = gitHubApi.getRepository("Jetbrains","kotlin").execute()
-      val repository = response.body()
-      if (repository == null){
-          println("Error!${response.code()} - ${response.message()}")
-      } else {
-          println(repository.name)
-          println(repository.owner.login)
-          println(repository.stargazers_count)
-          println(repository.forks_count)
-          println(repository.html_url)
+    val response = gitHubApi.getRepository("Jetbrains", "kotlin").execute()
+    val repository = response.body()
+    if (repository == null) {
+        println("Error!${response.code()} - ${response.message()}")
+    } else {
+        println(repository.name)
+        println(repository.owner.login)
+        println(repository.stargazers_count)
+        println(repository.forks_count)
+        println(repository.html_url)
 
-          File("Kotlin.html").writeText("""
+        File("Kotlin.html").writeText(
+            """
               <!DOCTYPE html>
               <html>
               <head>
@@ -55,13 +56,14 @@ fun main() {
               </body>
 
               </html>
-          """.trimIndent())
+          """.trimIndent()
+        )
 
-  //        File("a.txt").writer().buffered().use {
-  //            it.write("")
-  //        }
+        //        File("a.txt").writer().buffered().use {
+        //            it.write("")
+        //        }
 
-  //        File("").readLines()
-  //        File("").readBytes()
-      }*/
+        //        File("").readLines()
+        //        File("").readBytes()
+    }
 }
